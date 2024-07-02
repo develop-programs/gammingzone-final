@@ -14,3 +14,8 @@ declare type Cards = {
   price: number;
   large?: boolean;
 };
+
+declare type SupportDataProps = {
+  title: string;
+  icon: JSX.Element;
+};
