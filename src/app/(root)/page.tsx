@@ -24,8 +24,8 @@ export default function page() {
                 <Image
                   src={item}
                   alt={item}
-                  width={424}
-                  height={248}
+                  width={1200}
+                  height={720}
                   key={index}
                   className="w-[30rem] aspect-video"
                   loading="lazy"
@@ -160,9 +160,9 @@ export default function page() {
                   src={item}
                   alt="offers"
                   key={index}
-                  width={671}
-                  height={351}
-                  className="w-full shadow-lg aspect-video"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-[40vh] shadow-lg aspect-video"
                   priority
                   decoding="async"
                 />
@@ -237,7 +237,7 @@ export default function page() {
             src="/images/macBook_banner.png"
             alt="promotion"
             width={1400}
-            height={424}
+            height={900}
             className="w-full"
             decoding="async"
             priority

@@ -23,9 +23,9 @@ export default function AdminNav() {
         <div className="w-full grid gap-4">
           {NavbarData.map((data: Nav, index) => {
             return (
-              <Link key={index} href={data.href}>
+              <Link key={index} href={data.href} className="w-full">
                 <Button
-                  className="flex justify-start gap-3 px-2"
+                  className="w-full flex justify-start gap-3 px-2 py-6"
                   variant={pathname === data.href ? "primary" : "ghost"}
                   size="lg"
                 >

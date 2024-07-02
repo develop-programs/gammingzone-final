@@ -17,9 +17,9 @@ export default function Cart() {
     <Sheet>
       <SheetTrigger asChild>
         <Button
-          variant="outline"
+          variant="ghost"
           size="icon"
-          className="bg-transparent hover:bg-transparent"
+          className="relative bg-transparent hover:bg-transparent"
           aria-label="Cart button"
         >
           <svg
@@ -38,6 +38,9 @@ export default function Cart() {
               strokeLinejoin="round"
             />
           </svg>
+          <span className="absolute top-0 right-0 size-4 rounded-full bg-white shadow-md grid place-content-center">
+            1
+          </span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right">

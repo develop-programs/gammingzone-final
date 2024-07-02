@@ -1,4 +1,3 @@
-"use client";
 import AdminOrders from "@/components/admin-components/Admin-Orders";
 import DashboardCard from "@/components/admin-components/DashboardCard";
 import AdminChart from "@/components/charts/AdminChart";

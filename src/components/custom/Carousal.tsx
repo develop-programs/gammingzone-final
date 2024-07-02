@@ -29,8 +29,8 @@ export default function BannerCarousal() {
             <Image
               src={item}
               alt={item}
-              width={913}
-              height={530}
+              width={1200}
+              height={720}
               className="w-full aspect-video"
               priority
               decoding="async"
