@@ -54,10 +54,10 @@ export default function BreadcrumbsMain() {
                 ) : (
                   <>
                     <BreadcrumbLink href={crumbPath}>{linkName}</BreadcrumbLink>
-                    {pathname.length !== index + 1 && <BreadcrumbSeparator />}
                   </>
                 )}
               </BreadcrumbItem>
+              {pathname.length !== index - 1 && <BreadcrumbSeparator />}
             </Fragment>
           );
         })}

@@ -92,7 +92,7 @@ export const NavbarData: Nav[] = [
 export const MainNavbar: Nav[] = [
   {
     title: "Track Order",
-    href: "/TrackOrder",
+    href: "/pages/Track",
     icon: (
       <svg
         width="18"
@@ -114,7 +114,7 @@ export const MainNavbar: Nav[] = [
   },
   {
     title: "Compare",
-    href: "/Compare",
+    href: "/pages/Compare",
     icon: (
       <svg
         width="12"
@@ -133,7 +133,7 @@ export const MainNavbar: Nav[] = [
   },
   {
     title: "Customer Support",
-    href: "/Support",
+    href: "/pages/Support",
     icon: (
       <svg
         width="24"
@@ -155,7 +155,7 @@ export const MainNavbar: Nav[] = [
   },
   {
     title: "Need Help",
-    href: "/Help",
+    href: "/pages/Help",
     icon: (
       <svg
         width="12"

@@ -15,11 +15,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import Link from "next/link";
 import { MainNavbar } from "@/json/Navbar";
 import Cart from "@/components/custom/Cart";
@@ -32,8 +27,8 @@ export default function Navigation() {
         <span className="sr-only">main navigation</span>
         <div className="container flex justify-between items-center py-2">
           <div className="flex gap-6 items-center">
-            <Popover>
-              <PopoverTrigger asChild>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
                 <Button variant="outline">
                   All Category
                   <svg
@@ -53,14 +48,16 @@ export default function Navigation() {
                     />
                   </svg>
                 </Button>
-              </PopoverTrigger>
-              <PopoverContent></PopoverContent>
-            </Popover>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>All Items</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <div className="flex items-center gap-4">
               {MainNavbar.map((Item: Nav, index: number) => {
                 return (
                   <Link
-                    href="#"
+                    href={Item.href}
                     key={index}
                     className="text-sm flex gap-1 items-center hover:bg-slate-300 p-2 rounded-md font-semibold"
                   >
@@ -162,8 +159,8 @@ export function NavigationTop() {
       </div>
       <div className="w-full">
         <div className="container flex items-center justify-between py-4">
-          <div>
-            <h1 className="text-2xl font-bold text-white">Gamming Zone</h1>
+          <div className="text-xl font-black text-white">
+            <Link href="/">Gamming Zone</Link>
           </div>
           <div className="flex items-center gap-3 bg-white w-96 px-2">
             <input
@@ -213,7 +210,7 @@ export function NavigationTop() {
                   </svg>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent align="end" side="bottom">
                 <DropdownMenuLabel>Account</DropdownMenuLabel>
                 <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem>Wishlist</DropdownMenuItem>
