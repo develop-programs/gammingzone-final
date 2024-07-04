@@ -96,11 +96,11 @@ export function NavigationTop() {
       <span className="sr-only">Navigation Page</span>
       <div className="w-full border-b border-slate-500">
         <div className="container text-white flex justify-between py-3">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center divide-x divide-slate-100">
             {["About Us", "Contact Us", "Help"].map((items, index) => (
-              <span key={index} className="text-sm">
+              <Link href="" className="text-xs px-2" key={index}>
                 {items}
-              </span>
+              </Link>
             ))}
           </div>
           <div className="flex items-center gap-2">
@@ -115,18 +115,17 @@ export function NavigationTop() {
                   "/svg/Pinterest.svg",
                   "/svg/Reddit.svg",
                 ].map((items, index) => (
-                  <Image
-                    src={items}
-                    key={index}
-                    width={100}
-                    height={100}
-                    alt={`social icons`}
-                    className="size-4 rounded-full object-cover"
-                    decoding="async"
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL={items}
-                  />
+                  <Link href="" className="text-sm" key={index}>
+                    <Image
+                      src={items}
+                      width={20}
+                      height={20}
+                      className="size-4"
+                      alt="social media"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -138,7 +137,7 @@ export function NavigationTop() {
                 >
                   <SelectValue placeholder="Eng" />
                 </SelectTrigger>
-                <SelectContent align="end" sideOffset={10}>
+                <SelectContent align="end" sideOffset={5}>
                   <SelectItem value="Eng">English</SelectItem>
                 </SelectContent>
               </Select>
@@ -149,7 +148,7 @@ export function NavigationTop() {
                 >
                   <SelectValue placeholder="USD" />
                 </SelectTrigger>
-                <SelectContent align="end" sideOffset={10}>
+                <SelectContent align="end" sideOffset={5}>
                   <SelectItem value="USD">USD</SelectItem>
                 </SelectContent>
               </Select>
@@ -211,9 +210,13 @@ export function NavigationTop() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" side="bottom">
-                <DropdownMenuLabel>Account</DropdownMenuLabel>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Wishlist</DropdownMenuItem>
+                <DropdownMenuLabel>Profile</DropdownMenuLabel>
+                <DropdownMenuItem>
+                  <Link href="/UserAccount/Dashboard">Profile</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/wishlist">WishList</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>Logout</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

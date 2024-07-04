@@ -6,11 +6,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 export type Payment = {
-  Customer: string;
-  Product: string;
-  orderId: number;
-  Date: string;
-  status: "pending" | "Shipped" | "Cancelled";
+  Product_Name: string;
+  Product_Price: number;
+  Product_category: string;
+  Product_Image: string;
+  Product_Brand: string;
+  Product_id: number;
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -33,22 +34,6 @@ export const columns: ColumnDef<Payment>[] = [
         aria-label="Select row"
       />
     ),
-  },
-  {
-    accessorKey: "Customer",
-    header: "Customer",
-  },
-  {
-    accessorKey: "Product",
-    header: "Product",
-  },
-  {
-    accessorKey: "orderId",
-    header: "orderId",
-  },
-  {
-    accessorKey: "Date",
-    header: "Date",
   },
   {
     accessorKey: "status",
