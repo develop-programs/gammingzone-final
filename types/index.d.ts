@@ -19,3 +19,9 @@ declare type SupportDataProps = {
   title: string;
   icon: JSX.Element;
 };
+
+declare type cardProps = {
+  lable: string;
+  tabs?: string[];
+  dealsEndsIn?: string;
+};

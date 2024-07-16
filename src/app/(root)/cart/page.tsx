@@ -14,7 +14,7 @@ import {
 
 export default function page() {
   return (
-    <div className="w-full h-[calc(100vh-15rem)]">
+    <div className="w-full h-[calc(100vh-11rem)]">
       <div className="container">
         <BreadcrumbsMain />
         <div className="w-full h-full flex gap-12 py-12">

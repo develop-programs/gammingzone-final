@@ -42,7 +42,7 @@ export default function AdminNav() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="ghost"
-              className="w-full flex justify-start px-2 gap-3 focus-visible:ring-0"
+              className="w-full flex justify-start px-2 py-6 rounded-md gap-3 focus-visible:ring-0"
               size="default"
             >
               <svg

@@ -31,9 +31,9 @@ export default function BannerCarousal() {
               alt={item}
               width={1200}
               height={720}
-              className="w-full aspect-video"
-              priority
+              className="w-full aspect-auto"
               decoding="async"
+              loading="lazy"
             />
           </CarouselItem>
         ))}

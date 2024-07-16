@@ -1,7 +1,5 @@
 "use client";
 import * as React from "react";
-
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -32,15 +30,17 @@ export default function Categories() {
         ].map((item, index) => (
           <CarouselItem
             key={index}
-            className="md:basis-1/2 lg:basis-1/4 xl:basis-1/5"
+            className="md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
           >
-            <div className="size-28 xl:size-32 2xl:size-44 aspect-square grid place-content-center select-none">
+            <div className="size-32 aspect-square grid place-content-center select-none">
               <Image
                 src={item}
                 alt={item}
                 width={300}
                 height={300}
-                className="w-full"
+                className="w-full aspect-auto"
+                decoding="async"
+                loading="lazy"
               />
             </div>
           </CarouselItem>
