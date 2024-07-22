@@ -9,7 +9,7 @@ export default function Cards(props: cardProps) {
       <Tabs defaultValue={props.tabs[0]}>
         <div className="flex items-center justify-between">
           <div className="text-xl font-bold">{props.lable}</div>
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-6">
             <TabsList className="">
               {props.tabs.map((tab) => (
                 <TabsTrigger key={tab} value={tab}>

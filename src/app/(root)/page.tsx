@@ -1,6 +1,7 @@
 import Cards from "@/components/custom/Cards";
 import BannerCarousal from "@/components/custom/Carousal";
 import Categories from "@/components/custom/Categories";
+import NewsCard from "@/components/custom/NewsCard";
 import NewsLetter from "@/components/custom/NewsLetter";
 import Image from "next/image";
 import React from "react";
@@ -59,8 +60,8 @@ export default function page() {
       <section aria-label="Feature Products">
         <span className="sr-only">Featured Products</span>
         <div className="container grid grid-cols-8 gap-3 h-[35rem]">
-          <div className="col-span-2 h-full border border-slate-900"></div>
-          <div className="col-span-6">
+          <div className="hidden lg:block col-span-2 h-full border border-slate-900"></div>
+          <div className="col-span-8 lg:col-span-6">
             <Cards
               lable="Featured Products"
               tabs={["All", "Smartphones", "Laptops"]}
@@ -71,7 +72,7 @@ export default function page() {
       <section aria-label="offers">
         <span className="sr-only">offers</span>
         <div className="container">
-          <div className="grid grid-cols-1 xl:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             {["/images/Banner.png", "/images/Frame 14.png"].map(
               (item, index) => (
                 <Image
@@ -91,13 +92,13 @@ export default function page() {
       </section>
       <section aria-label="Gamming Accessories">
         <div className="container grid grid-cols-8 gap-3 h-[35rem]">
-          <div className="col-span-6">
+          <div className="col-span-8 lg:col-span-6">
             <Cards
               lable="Gamming Accessories"
               tabs={["All", "Smartphones", "Laptops"]}
             />
           </div>
-          <div className="col-span-2 h-full border border-slate-900"></div>
+          <div className="hidden lg:block col-span-2 h-full border border-slate-900"></div>
         </div>
       </section>
       <section aria-label="promotion">
@@ -112,6 +113,16 @@ export default function page() {
             decoding="async"
             priority
           />
+        </div>
+      </section>
+      <section aria-label="news">
+        <div className="container space-y-12">
+          <p className="text-2xl font-bold w-full text-center">Latest News</p>
+          <div className="grid lg:grid-cols-3 gap-3">
+            {Array.from({ length: 3 }, (_, i) => (
+              <NewsCard key={i} />
+            ))}
+          </div>
         </div>
       </section>
       <NewsLetter />

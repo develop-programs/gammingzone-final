@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import {
@@ -18,6 +19,12 @@ import {
 import Link from "next/link";
 import { MainNavbar } from "@/json/Navbar";
 import Cart from "@/components/custom/Cart";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 export default function Navigation() {
   return (
@@ -27,32 +34,35 @@ export default function Navigation() {
         <span className="sr-only">main navigation</span>
         <div className="container flex justify-between items-center py-2">
           <div className="flex gap-6 items-center">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline">
-                  All Category
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="size-5"
-                  >
-                    <path
-                      d="M19 9L12 16L5 9"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button className="bg-orange-700 hover:bg-orange-700/90 rounded-md text-white hover:text-white">
+                  All Categories
+                  <ChevronDownIcon />
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>All Items</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </PopoverTrigger>
+              <PopoverContent className="grid max-w-max">
+                {[
+                  "Computer Accessories",
+                  "Smartphone",
+                  "Headphone",
+                  "Mobile-Accessories",
+                  "Gamirig Console",
+                  "Came/a & Photo",
+                  "TV & Homes Appliances",
+                  "Watchs & Accessories",
+                  "GPS & Navigation",
+                ].map((item, index) => (
+                  <Link
+                    href=""
+                    key={index}
+                    className="text-sm hover:bg-slate-300 p-2 rounded-md font-semibold"
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </PopoverContent>
+            </Popover>
             <div className="flex items-center gap-4">
               {MainNavbar.map((Item: Nav, index: number) => {
                 return (

@@ -88,7 +88,7 @@ export default function Footer() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="text-xs  grid place-content-center border rounded-sm p-2 hover:bg-white/20"
+                  className="text-xs  grid place-content-center border rounded-sm py-1 px-2 hover:bg-white/20"
                 >
                   {item}
                 </div>

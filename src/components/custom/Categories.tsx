@@ -16,7 +16,7 @@ export default function Categories() {
         align: "start",
         loop: true,
       }}
-      className="w-full"
+      className="w-full md:w-[45rem] lg:w-[60rem] xl:w-full"
     >
       <CarouselContent>
         {[
@@ -30,7 +30,7 @@ export default function Categories() {
         ].map((item, index) => (
           <CarouselItem
             key={index}
-            className="md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
+            className="md:basis-1/3 lg:basis-1/4 xl:basis-1/6"
           >
             <div className="size-32 aspect-square grid place-content-center select-none">
               <Image
