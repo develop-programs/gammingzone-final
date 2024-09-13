@@ -72,7 +72,7 @@ export default function page() {
       <section aria-label="offers">
         <span className="sr-only">offers</span>
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {["/images/Banner.png", "/images/Frame 14.png"].map(
               (item, index) => (
                 <Image
@@ -81,7 +81,7 @@ export default function page() {
                   key={index}
                   width={1920}
                   height={1080}
-                  className="w-full h-[40vh] shadow-lg aspect-video"
+                  className="w-full h-[35vh] shadow-lg aspect-video"
                   priority
                   decoding="async"
                 />
