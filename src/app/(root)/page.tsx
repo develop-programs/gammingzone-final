@@ -1,10 +1,12 @@
-import Cards from "@/components/custom/Cards";
-import BannerCarousal from "@/components/custom/Carousal";
-import Categories from "@/components/custom/Categories";
-import NewsCard from "@/components/custom/NewsCard";
-import NewsLetter from "@/components/custom/NewsLetter";
 import Image from "next/image";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const BannerCarousal = dynamic(() => import("@/components/custom/Carousal"));
+const Cards = dynamic(() => import("@/components/custom/Cards"));
+const Categories = dynamic(() => import("@/components/custom/Categories"));
+const NewsCard = dynamic(() => import("@/components/custom/NewsCard"));
+const NewsLetter = dynamic(() => import("@/components/custom/NewsLetter"));
 
 export default function page() {
     return (
@@ -13,7 +15,11 @@ export default function page() {
                 <span className="sr-only">Promotion</span>
                 <div className="container space-y-2">
                     <div className="flex items-center gap-6">
-                        <BannerCarousal/>
+                        <React.Suspense fallback={<>
+                            loading...
+                        </>}>
+                            <BannerCarousal/>
+                        </React.Suspense>
                         <div className="max-w-5xl">
                             {[
                                 "/images/flipbuds_banner.png",
@@ -45,7 +51,9 @@ export default function page() {
             <section aria-label="deals">
                 <span className="sr-only">Deals</span>
                 <div className="container">
-                    <Cards lable="Best Deals"/>
+                    <React.Suspense fallback={<>Loading...</>}>
+                        <Cards lable="Best Deals"/>
+                    </React.Suspense>
                 </div>
             </section>
             {/*categories section*/}
@@ -53,9 +61,11 @@ export default function page() {
                 <div className="container">
                     <div className="grid gap-3">
                         <div className="text-center">
-                            <span className="text-2xl font-bold">Shop with Categorys</span>
+                            <span className="text-2xl font-bold">Shop with Category</span>
                         </div>
-                        <Categories/>
+                        <React.Suspense fallback={<>Loading...</>}>
+                            <Categories/>
+                        </React.Suspense>
                     </div>
                 </div>
             </section>
@@ -65,10 +75,12 @@ export default function page() {
                 <div className="container grid grid-cols-8 gap-3 h-[35rem]">
                     <div className="hidden lg:block col-span-2 h-full border border-slate-900"></div>
                     <div className="col-span-8 lg:col-span-6">
-                        <Cards
-                            lable="Featured Products"
-                            tabs={["All", "Smartphones", "Laptops"]}
-                        />
+                        <React.Suspense fallback={<>Loading...</>}>
+                            <Cards
+                                lable="Featured Products"
+                                tabs={["All", "Smartphones", "Laptops"]}
+                            />
+                        </React.Suspense>
                     </div>
                 </div>
             </section>
@@ -98,10 +110,12 @@ export default function page() {
             <section aria-label="Gamming Accessories">
                 <div className="container grid grid-cols-8 gap-3 h-[35rem]">
                     <div className="col-span-8 lg:col-span-6">
-                        <Cards
-                            lable="Gamming Accessories"
-                            tabs={["All", "Smartphones", "Laptops"]}
-                        />
+                        <React.Suspense fallback={<>Loading...</>}>
+                            <Cards
+                                lable="Gamming Accessories"
+                                tabs={["All", "Smartphones", "Laptops"]}
+                            />
+                        </React.Suspense>
                     </div>
                     <div className="hidden lg:block col-span-2 h-full border border-slate-900"></div>
                 </div>

@@ -133,7 +133,7 @@ export const MainNavbar: Nav[] = [
   },
   {
     title: "Customer Support",
-    href: "/pages/Support",
+    href: "/pages/Help/Support",
     icon: (
       <svg
         width="24"
