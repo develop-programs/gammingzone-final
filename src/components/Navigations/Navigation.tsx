@@ -36,7 +36,7 @@ export default function Navigation() {
           <div className="flex gap-6 items-center">
             <Popover>
               <PopoverTrigger asChild>
-                <Button className="bg-orange-700 hover:bg-orange-700/90 rounded-md text-white hover:text-white">
+                <Button className="bg-orange-600 hover:bg-orange-600/90 rounded-md text-white hover:text-white">
                   All Categories
                   <ChevronDownIcon />
                 </Button>
